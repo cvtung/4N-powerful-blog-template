@@ -1,4 +1,5 @@
 Live demo:
+Deploy now: [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cvtung/4N-powerful-blog-template&stack=cms)
 
 This project is one of my experiments with JAM stack. You can learn more about JAM stack here: https://jamstack.org.
 I was about to build a new personal blog only which should be as simple as possible and I ended up with crafting a new template because I couldn't find any [template](https://templates.netlify.com/) that satisfies my requirements. It took me few weeks to study, write guiding stuffs, ... but it was fun and worth my while. Hope you like it too.
@@ -9,9 +10,8 @@ You can contribute to or fork it from my Github repository: https://github.com/c
 
 If you want to propose any new feature or ask any question about this project, please visit project's discussion section and search for it before opening a new thread: https://github.com/cvtung/4N-powerful-blog-template/discussions
 
-
-
 ---
+
 ## Frequently asked questions
 
 ### Why was this template named as 4N?
@@ -28,7 +28,7 @@ If you want to propose any new feature or ask any question about this project, p
 
 ### Please explain more ... :cry:
 
-> When you decide to click [Deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/cvtung/4N-powerful-blog-template&stack=cms), Netlify will copy this template source code into your Github account, start generating a static website from code and host that site for you automatically. After few minutes, your site will be ready at `https://your-netlify-site-name.netlify.com`, you can go to `https://your-netlify-site-name.netlify.com/admin` and tweak. From now on, all content you publish will be saved in your Github account and Netlify will update your site with your new content automatically. Normally, it only takes 1 minute to refresh your site after you finish writing.
+> When you decide to click [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cvtung/4N-powerful-blog-template&stack=cms), Netlify will copy this template source code into your Github account, start generating a static website from code and host that site for you automatically. After few minutes, your site will be ready at `https://your-netlify-site-name.netlify.com`, you can go to `https://your-netlify-site-name.netlify.com/admin` and tweak. From now on, all content you publish will be saved in your Github account and Netlify will update your site with your new content automatically. Normally, it only takes 1 minute to refresh your site after you finish writing.
 
 ---
 
