@@ -1,4 +1,5 @@
-Live demo:
+Live demo: https://4n-powerful-blog-template.netlify.app/ [![Netlify Status](https://api.netlify.com/api/v1/badges/0f5e036f-15b0-40ee-84ee-7983a8d90680/deploy-status)](https://app.netlify.com/sites/4n-powerful-blog-template/deploys)
+
 Deploy now: [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cvtung/4N-powerful-blog-template&stack=cms)
 
 This project is one of my experiments with JAM stack. You can learn more about JAM stack here: https://jamstack.org.
@@ -24,7 +25,7 @@ If you want to propose any new feature or ask any question about this project, p
 
 ### I'm a non-tech user, can I still use it?
 
-> Sure. This template is a ready-to-use blog. The only things you need to do is to register a [Github](https://github.com/) account and a [Netlify](https://www.netlify.com/) account (all free) and click a some magic buttons, everything will be ready in 5 minutes (no kidding :sunglasses:). Please read [Getting started](/getting-started) page and [Tutorials](/tutorials) category for more information.
+> Sure. This template is a ready-to-use blog. The only things you need to do is to register a [Github](https://github.com/) account and a [Netlify](https://www.netlify.com/) account (all free) and click a some magic buttons, everything will be ready in 5 minutes (no kidding :sunglasses:). Please read [Getting started](https://4n-powerful-blog-template.netlify.app/getting-started) page and [Tutorials](https://4n-powerful-blog-template.netlify.app/tutorials) category for more information.
 
 ### Please explain more ... :cry:
 
