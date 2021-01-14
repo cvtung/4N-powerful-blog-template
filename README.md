@@ -1,4 +1,4 @@
-Live demo: https://4n-powerful-blog-template.netlify.app/ [![Netlify Status](https://api.netlify.com/api/v1/badges/0f5e036f-15b0-40ee-84ee-7983a8d90680/deploy-status)](https://app.netlify.com/sites/4n-powerful-blog-template/deploys)
+Live demo: https://4n-powerful-blog-template.netlify.app/ [![Netlify Status](https://api.netlify.com/api/v1/badges/ad589d6b-c50e-42ce-a288-83f979818fc1/deploy-status)](https://app.netlify.com/sites/4n-powerful-blog-template/deploys)
 
 Deploy now: [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cvtung/4N-powerful-blog-template&stack=cms)
 
