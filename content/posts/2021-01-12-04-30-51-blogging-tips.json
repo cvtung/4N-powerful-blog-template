@@ -1,0 +1,13 @@
+{
+  "body": "## Table of contents\n\n[toc]\n\n## Jumbotron\nJumbotron is a large image on the top of each page. I often use free royalty photo as jumbotron to decorate my blog and credit the author of that photo at the bottom of each page.\nThere are many sites providing free stock image like:\n- [Stocksnap.io](https://stocksnap.io)\n- [Unsplash](https://unsplash.com/)\n- [Pexels](https://www.pexels.com/)\n- [Reshot](https://www.reshot.com/)\n- [Pixabay](https://pixabay.com/)\n...\n\n:::warning\nBecause these photos are big (1MB at least), you should resize them to some common smaller resolutions like 2160x1440 or 1920x1080 and optimize them by compressing, keep 50% quality only. This won't affect your image quality too much but help reduce its size down to ~100KB and increase your website's loading speed drastically.\n:::\n\n## Icon\nThere are many free icon sets out there. My 2 favorites are:\n- [Twitter's Twemoji](https://twemoji.twitter.com/) \n- [Mozilla's FirefoxEmoji](https://mozilla.github.io/fxemoji)\n\nJust go to there Github repository and `Download ZIP`. After downloading them, extract and find emoji in `/assets` or `/svgs` folder.\n> ![Download ZIP](https://res.cloudinary.com/tungcv/image/upload/v1610440409/4N%20Powerful%20Blog%20Template/Tutorials/Blogging%20tips/download_twemoji_hfn1ew.png \"Download ZIP\")\n\n---\n## Credits\n[Jumbotron image](https://unsplash.com/photos/505eectW54k) by [Thought Catalog](https://unsplash.com/@thoughtcatalog?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/blog?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)",
+  "jumbotron": "/img/thought-catalog-505eectw54k-unsplash.jpg",
+  "author_avatar": "",
+  "date": "January 12, 2021 11:26 AM",
+  "title": "Blogging tips",
+  "icon": "/img/1f4a1.png",
+  "description": "Tips for writing blog",
+  "category": [
+    "Tutorials"
+  ],
+  "author_name": ""
+}

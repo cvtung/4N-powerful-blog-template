@@ -1,0 +1,13 @@
+{
+  "body": "\n1. This project is best used for personal blog because it always load all data from `content/` directory at first (which is not good if you have thousands of files in there).\n\n2. I enable editorial flow for Netlify CMS so when you save a file, Netliy will automatically build a preview and this consumes your available build minutes a lot. Be careful or you will exceed your Netlify free plan accidently.\n\n3. When you want to upgrade your blog with newer version of this template, you have to manually backup and import all files from 'content/' folder. This process is quite hard for a non-developer. \n\n---\n\n## Credits\n[Jumbotron image](https://unsplash.com/photos/KrQJzrZiCak) by [Torsten Dederichs](https://unsplash.com/@tdederichs?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/storm?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)",
+  "jumbotron": "/img/torsten-dederichs-krqjzrzicak-unsplash.jpg",
+  "author_avatar": "",
+  "date": "January 14, 2021 11:12 AM",
+  "title": "Project disavantages",
+  "icon": "/img/1f4a9.png",
+  "description": "Few weaknesses may cause troubles",
+  "category": [
+    "Tutorials"
+  ],
+  "author_name": ""
+}
