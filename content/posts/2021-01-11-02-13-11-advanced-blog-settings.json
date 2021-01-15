@@ -1,11 +1,13 @@
 {
-	"body": "Basic settings are introduced in [Getting started](/getting-started) page. This posts is about other configurations that you may need. New settings will be updated here.\n\n--- \n\n## Table of Contents\n\n[toc]\n\n## Navigation\n\nLet's say your website is at `https://your-website-name.netlify.app`, go to `https://your-website-name.netlify.app/admin` and log in with your admin account.\nThen navigate to `Collections > Settings`. This will show a list of your blog settings\n\n## General\n\n- `WEBSITE_NAME`: your blog name\n- `JUMBOTRON`: a large image on the top of the home page\n- `LOGO`: your blog logo\n- `AUTHOR_NAME`: your name here\n- `AUTHOR_AVATAR`: your avatar\n- `DESCRIPTION`: some words describe your blog\n\n## Social sharing\n\n Toggle each option to display share button for that network at the bottom of pages/posts\n\n---\n## Credits\n[Jumbotron image](https://unsplash.com/photos/60krlMMeWxU) by [NeONBRAND](https://unsplash.com/@neonbrand?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/mechanic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)",
-	"jumbotron": "/img/neonbrand-60krlmmewxu-unsplash.jpg",
-	"author_avatar": "",
-	"date": "January 11, 2021 9:06 AM",
-	"title": "Advanced blog settings",
-	"icon": "/img/1f6e0.png",
-	"description": "More configurations for your blog",
-	"category": ["Tutorials"],
-	"author_name": ""
+  "body": "Basic settings are introduced in [Getting started](/getting-started) page. This posts is about other configurations that you may need. New settings will be updated here.\n\nLet's say your website is at `https://your-website-name.netlify.app`, go to `https://your-website-name.netlify.app/admin` and log in with your admin account.\nThen navigate to `Collections > Settings`. This will show a list of your blog settings.\n\n--- \n\n## Table of Contents\n\n[toc]\n\n## General\n\n- `WEBSITE_NAME`: your blog name\n- `JUMBOTRON`: a large image on the top of the home page\n- `LOGO`: your blog logo\n- `AUTHOR_NAME`: your name here\n- `AUTHOR_AVATAR`: your avatar\n- `DESCRIPTION`: some words describe your blog\n\n## Social sharing\n\n Toggle each option to display share button for that network at the bottom of pages/posts\n\n---\n## Credits\n[Jumbotron image](https://unsplash.com/photos/60krlMMeWxU) by [NeONBRAND](https://unsplash.com/@neonbrand?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/mechanic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)",
+  "jumbotron": "/img/neonbrand-60krlmmewxu-unsplash.jpg",
+  "author_avatar": "",
+  "date": "January 11, 2021 9:06 AM",
+  "title": "Advanced blog settings",
+  "icon": "/img/1f6e0.png",
+  "description": "More configurations for your blog",
+  "category": [
+    "Tutorials"
+  ],
+  "author_name": ""
 }
