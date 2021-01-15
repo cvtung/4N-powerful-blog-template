@@ -14,7 +14,7 @@
 
 			<div class="TopBarDelimiter" v-show="this.showFull"></div>
 
-			<div ref="TopBarItemList" v-show="this.showFull">
+			<div :class="this.topBarItemListClassName" ref="TopBarItemList">
 				<top-bar-item
 					v-for="(navigation, index) in navigations"
 					:key="index"
@@ -34,6 +34,7 @@ export default {
 		return {
 			showFull: true,
 			windowWidth: 0,
+			topBarItemListClassName: 'TopBarItemList',
 		}
 	},
 
@@ -61,6 +62,12 @@ export default {
 				this.showFull = false
 			} else {
 				this.showFull = true
+			}
+
+			if (this.showFull == true) {
+				this.topBarItemListClassName = 'TopBarItemList'
+			} else {
+				this.topBarItemListClassName = 'TopBarItemListHidden'
 			}
 		},
 	},
@@ -91,5 +98,13 @@ export default {
 .TopBarDelimiter {
 	flex-grow: 1;
 	flex-shrink: 1;
+}
+
+.TopBarItemList {
+	opacity: 1;
+}
+
+.TopBarItemListHidden {
+	opacity: 0;
 }
 </style>
