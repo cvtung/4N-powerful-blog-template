@@ -228,9 +228,9 @@ collections:
       label: 'Settings'
       description: 'Do not delete any file'
       files:
-          - label: 'Setting'
-            name: 'setting'
-            file: '/content/setting.json'
+          - label: 'General'
+            name: 'general'
+            file: '/content/settings/general.json'
             fields:
                 - {
                       label: 'WEBSITE_NAME',
@@ -276,4 +276,177 @@ collections:
                       widget: 'string',
                       required: false,
                       default: 'An awesome blog',
+                  }
+          - label: 'Social sharing'
+            name: 'social-sharing'
+            file: '/content/settings/social-sharing.json'
+            fields:
+                - {
+                      label: 'Baidu',
+                      name: 'baidu',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Buffer',
+                      name: 'buffer',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Email',
+                      name: 'email',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Evernote',
+                      name: 'evernote',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Facebook',
+                      name: 'facebook',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Flipboard',
+                      name: 'flipboard',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Hackernews',
+                      name: 'hackernews',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Instapaper',
+                      name: 'instapaper',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Line',
+                      name: 'line',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'LinkedIn',
+                      name: 'linkedin',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Odnoklassniki',
+                      name: 'odnoklassniki',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Pinterest',
+                      name: 'pinterest',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Pocket',
+                      name: 'pocket',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Quora',
+                      name: 'quora',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Reddit',
+                      name: 'reddit',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Skype',
+                      name: 'skype',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'SMS',
+                      name: 'sms',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'StumbleUpon',
+                      name: 'stumbleupon',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Telegram',
+                      name: 'telegram',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Tumblr',
+                      name: 'tumblr',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Twitter',
+                      name: 'twitter',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Twitter username',
+                      name: 'twitter_username',
+                      widget: 'text',
+                      hint: 'People will mention your Twitter username when they share your post on Twitter',
+                  }
+                - {
+                      label: 'Viber',
+                      name: 'viber',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - { label: 'Vk', name: 'vk', widget: 'boolean', default: true }
+                - {
+                      label: 'Weibo',
+                      name: 'weibo',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Whatsapp',
+                      name: 'whatsapp',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Wordpress',
+                      name: 'wordpress',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Xing',
+                      name: 'xing',
+                      widget: 'boolean',
+                      default: true,
+                  }
+                - {
+                      label: 'Yammer',
+                      name: 'yammer',
+                      widget: 'boolean',
+                      default: true,
                   }

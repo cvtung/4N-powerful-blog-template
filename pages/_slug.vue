@@ -14,7 +14,11 @@
 			<!-- Display single page content -->
 			<div v-if="this.body.length">
 				<markdown-content :content="this.body" />
-				<footing />
+				<footing
+					:title="this.title"
+					:description="this.description"
+					:authorName="this.authorName"
+				/>
 			</div>
 
 			<!-- Display list of posts in category -->

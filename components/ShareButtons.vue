@@ -5,8 +5,8 @@ Creating multiple Share Network link with dynamic data
 		<ShareNetwork
 			class="ShareButton"
 			v-for="network in networks"
-			:network="network.network"
-			:key="network.network"
+			:network="network.slug"
+			:key="network.slug"
 			:style="{ backgroundColor: network.color }"
 			:url="sharing.url"
 			:title="sharing.title"
@@ -32,34 +32,34 @@ Creating multiple Share Network link with dynamic data
 </template>
 
 <script>
-import Divider from './Divider.vue'
-import Spacer from './Spacer.vue'
 export default {
-	components: { Divider, Spacer },
+	props: {
+		title: String,
+		description: String,
+		authorName: String,
+	},
+
 	data() {
 		return {
 			sharing: {
-				url: 'https://news.vuejs.org/issues/180',
-				title:
-					'Say hi to Vite! A brand new, extremely fast development setup for Vue.',
-				description:
-					'This week, I’d like to introduce you to "Vite", which means "Fast". It’s a brand new development setup created by Evan You.',
-				quote:
-					"The hot reload is so fast it's near instant. - Evan You",
-				hashtags: 'vuejs,vite,javascript',
-				twitterUser: 'youyuxi',
+				url: '',
+				title: '',
+				description: '',
+				quote: '',
+				hashtags: '',
+				twitterUser: '',
 			},
 			networks: [
 				{
-					network: 'baidu',
-					name: 'Baidu123',
+					slug: 'baidu',
+					name: 'Baidu',
 					icon: ['fas', 'paw'],
 					iconPath:
 						'M256 224c-79.41 0-192 122.76-192 200.25 0 34.9 26.81 55.75 71.74 55.75 48.84 0 81.09-25.08 120.26-25.08 39.51 0 71.85 25.08 120.26 25.08 44.93 0 71.74-20.85 71.74-55.75C448 346.76 335.41 224 256 224zm-147.28-12.61c-10.4-34.65-42.44-57.09-71.56-50.13-29.12 6.96-44.29 40.69-33.89 75.34 10.4 34.65 42.44 57.09 71.56 50.13 29.12-6.96 44.29-40.69 33.89-75.34zm84.72-20.78c30.94-8.14 46.42-49.94 34.58-93.36s-46.52-72.01-77.46-63.87-46.42 49.94-34.58 93.36c11.84 43.42 46.53 72.02 77.46 63.87zm281.39-29.34c-29.12-6.96-61.15 15.48-71.56 50.13-10.4 34.65 4.77 68.38 33.89 75.34 29.12 6.96 61.15-15.48 71.56-50.13 10.4-34.65-4.77-68.38-33.89-75.34zm-156.27 29.34c30.94 8.14 65.62-20.45 77.46-63.87 11.84-43.42-3.64-85.21-34.58-93.36s-65.62 20.45-77.46 63.87c-11.84 43.42 3.64 85.22 34.58 93.36z',
 					color: '#2529d8',
 				},
 				{
-					network: 'buffer',
+					slug: 'buffer',
 					name: 'Buffer',
 					icon: ['fab', 'buffer'],
 					iconPath:
@@ -67,7 +67,7 @@ export default {
 					color: '#323b43',
 				},
 				{
-					network: 'email',
+					slug: 'email',
 					name: 'Email',
 					icon: ['fas', 'envelope'],
 					iconPath:
@@ -75,7 +75,7 @@ export default {
 					color: '#333333',
 				},
 				{
-					network: 'evernote',
+					slug: 'evernote',
 					name: 'Evernote',
 					icon: ['fab', 'evernote'],
 					iconPath:
@@ -83,7 +83,7 @@ export default {
 					color: '#2dbe60',
 				},
 				{
-					network: 'facebook',
+					slug: 'facebook',
 					name: 'Facebook',
 					icon: ['fab', 'facebook-f'],
 					iconPath:
@@ -91,7 +91,7 @@ export default {
 					color: '#1877f2',
 				},
 				{
-					network: 'flipboard',
+					slug: 'flipboard',
 					name: 'Flipboard',
 					icon: ['fab', 'flipboard'],
 					iconPath:
@@ -99,7 +99,7 @@ export default {
 					color: '#e12828',
 				},
 				{
-					network: 'hackernews',
+					slug: 'hackernews',
 					name: 'HackerNews',
 					icon: ['fab', 'hacker-news'],
 					iconPath:
@@ -107,7 +107,7 @@ export default {
 					color: '#ff4000',
 				},
 				{
-					network: 'instapaper',
+					slug: 'instapaper',
 					name: 'Instapaper',
 					icon: ['fas', 'italic'],
 					iconPath:
@@ -115,7 +115,7 @@ export default {
 					color: '#428bca',
 				},
 				{
-					network: 'line',
+					slug: 'line',
 					name: 'Line',
 					icon: ['fab', 'line'],
 					iconPath:
@@ -123,7 +123,7 @@ export default {
 					color: '#00c300',
 				},
 				{
-					network: 'linkedin',
+					slug: 'linkedin',
 					name: 'LinkedIn',
 					icon: ['fab', 'linkedin'],
 					iconPath:
@@ -131,7 +131,7 @@ export default {
 					color: '#007bb5',
 				},
 				{
-					network: 'odnoklassniki',
+					slug: 'odnoklassniki',
 					name: 'Odnoklassniki',
 					icon: ['fab', 'odnoklassniki'],
 					iconPath:
@@ -139,7 +139,7 @@ export default {
 					color: '#ed812b',
 				},
 				{
-					network: 'pinterest',
+					slug: 'pinterest',
 					name: 'Pinterest',
 					icon: ['fab', 'pinterest'],
 					iconPath:
@@ -147,7 +147,7 @@ export default {
 					color: '#bd081c',
 				},
 				{
-					network: 'pocket',
+					slug: 'pocket',
 					name: 'Pocket',
 					icon: ['fab', 'get-pocket'],
 					iconPath:
@@ -155,7 +155,7 @@ export default {
 					color: '#ef4056',
 				},
 				{
-					network: 'quora',
+					slug: 'quora',
 					name: 'Quora',
 					icon: ['fab', 'quora'],
 					iconPath:
@@ -163,7 +163,7 @@ export default {
 					color: '#a82400',
 				},
 				{
-					network: 'reddit',
+					slug: 'reddit',
 					name: 'Reddit',
 					icon: ['fab', 'reddit-alien'],
 					iconPath:
@@ -171,7 +171,7 @@ export default {
 					color: '#ff4500',
 				},
 				{
-					network: 'skype',
+					slug: 'skype',
 					name: 'Skype',
 					icon: ['fab', 'skype'],
 					iconPath:
@@ -179,7 +179,7 @@ export default {
 					color: '#00aff0',
 				},
 				{
-					network: 'sms',
+					slug: 'sms',
 					name: 'SMS',
 					icon: ['fas', 'comment-dots'],
 					iconPath:
@@ -187,7 +187,7 @@ export default {
 					color: '#333333',
 				},
 				{
-					network: 'stumbleupon',
+					slug: 'stumbleupon',
 					name: 'StumbleUpon',
 					icon: ['fab', 'stumbleupon'],
 					iconPath:
@@ -195,7 +195,7 @@ export default {
 					color: '#eb4924',
 				},
 				{
-					network: 'telegram',
+					slug: 'telegram',
 					name: 'Telegram',
 					icon: ['fab', 'telegram-plane'],
 					iconPath:
@@ -203,7 +203,7 @@ export default {
 					color: '#0088cc',
 				},
 				{
-					network: 'tumblr',
+					slug: 'tumblr',
 					name: 'Tumblr',
 					icon: ['fab', 'tumblr'],
 					iconPath:
@@ -211,7 +211,7 @@ export default {
 					color: '#35465c',
 				},
 				{
-					network: 'twitter',
+					slug: 'twitter',
 					name: 'Twitter',
 					icon: ['fab', 'twitter'],
 					iconPath:
@@ -219,7 +219,7 @@ export default {
 					color: '#1da1f2',
 				},
 				{
-					network: 'viber',
+					slug: 'viber',
 					name: 'Viber',
 					icon: ['fab', 'viber'],
 					iconPath:
@@ -227,7 +227,7 @@ export default {
 					color: '#59267c',
 				},
 				{
-					network: 'vk',
+					slug: 'vk',
 					name: 'Vk',
 					icon: ['fab', 'vk'],
 					iconPath:
@@ -235,7 +235,7 @@ export default {
 					color: '#4a76a8',
 				},
 				{
-					network: 'weibo',
+					slug: 'weibo',
 					name: 'Weibo',
 					icon: ['fab', 'weibo'],
 					iconPath:
@@ -243,7 +243,7 @@ export default {
 					color: '#e9152d',
 				},
 				{
-					network: 'whatsapp',
+					slug: 'whatsapp',
 					name: 'Whatsapp',
 					icon: ['fab', 'whatsapp'],
 					iconPath:
@@ -251,7 +251,7 @@ export default {
 					color: '#25d366',
 				},
 				{
-					network: 'wordpress',
+					slug: 'wordpress',
 					name: 'Wordpress',
 					icon: ['fab', 'wordpress'],
 					iconPath:
@@ -259,7 +259,7 @@ export default {
 					color: '#21759b',
 				},
 				{
-					network: 'xing',
+					slug: 'xing',
 					name: 'Xing',
 					icon: ['fab', 'xing'],
 					iconPath:
@@ -267,7 +267,7 @@ export default {
 					color: '#026466',
 				},
 				{
-					network: 'yammer',
+					slug: 'yammer',
 					name: 'Yammer',
 					icon: ['fab', 'yammer'],
 					iconPath:
@@ -276,6 +276,29 @@ export default {
 				},
 			],
 		}
+	},
+
+	beforeMount() {
+		let socialSharingSetting = this.$store.state.SOCIAL_SHARING
+		this.sharing.url = window.location.href
+		this.sharing.title = this.title
+		this.sharing.description = this.description
+		this.sharing.quote = this.description + ' - ' + this.authorName
+		this.sharing.hashtags = window.location.host
+		this.sharing.twitterUser = socialSharingSetting.twitter_username
+
+		let networks = this.networks
+		networks.forEach(function (network, index) {
+			if (
+				socialSharingSetting.hasOwnProperty(network.slug) &&
+				socialSharingSetting[network.slug] == false
+			) {
+				console.log(index)
+				networks.splice(index, 1)
+			}
+		})
+
+		this.networks = networks
 	},
 }
 </script>

@@ -13,7 +13,11 @@
 		>
 			<!-- Display post content -->
 			<markdown-content :content="this.body" />
-			<footing />
+			<footing
+				:title="this.title"
+				:description="this.description"
+				:authorName="this.authorName"
+			/>
 		</main-content>
 	</div>
 </template>

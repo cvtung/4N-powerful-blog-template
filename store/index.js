@@ -14,17 +14,55 @@ export const state = () => ({
 	AUTHOR_AVATAR: '/img/author.svg',
 	DESCRIPTION: 'Your website description',
 
+	SOCIAL_SHARING: {
+		buffer: true,
+		telegram: true,
+		hackernews: true,
+		odnoklassniki: true,
+		facebook: true,
+		weibo: true,
+		xing: true,
+		evernote: true,
+		instapaper: true,
+		whatsapp: true,
+		twitter: true,
+		twitter_username: '4NPowerfulBlog',
+		line: true,
+		yammer: true,
+		vk: true,
+		pocket: true,
+		skype: true,
+		sms: true,
+		flipboard: true,
+		wordpress: true,
+		quora: true,
+		pinterest: true,
+		baidu: true,
+		viber: true,
+		stumbleupon: true,
+		email: true,
+		tumblr: true,
+		linkedin: true,
+		reddit: true
+	},
+
 	showSideBar: false
 })
 
 export const mutations = {
-	setSetting(state, settings) {
+	setGeneralSetting(state, settings) {
 		state.WEBSITE_NAME = settings.WEBSITE_NAME
 		state.JUMBOTRON = settings.JUMBOTRON
 		state.LOGO = settings.LOGO
 		state.AUTHOR_NAME = settings.AUTHOR_NAME
 		state.AUTHOR_AVATAR = settings.AUTHOR_AVATAR
 		state.DESCRIPTION = settings.DESCRIPTION
+	},
+
+	setSocialSharingSetting(state, settings) {
+		for (let key in settings) {
+			state.SOCIAL_SHARING[key] = settings[key]
+		}
 	},
 
 	setNavigations(state, list) {
@@ -45,8 +83,11 @@ export const actions = {
 		/**
 		 * Load settings from file
 		 */
-		let setting = await require('~/content/setting.json')
-		await commit('setSetting', setting)
+		let generalSetting = await require('~/content/settings/general.json')
+		await commit('setGeneralSetting', generalSetting)
+
+		let socialSharingSetting = await require('~/content/settings/social-sharing.json')
+		await commit('setSocialSharingSetting', socialSharingSetting)
 
 		/**
 		 * Set navigation link
