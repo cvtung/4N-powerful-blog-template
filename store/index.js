@@ -89,6 +89,8 @@ export const actions = {
 		let socialSharingSetting = await require('~/content/settings/social-sharing.json')
 		await commit('setSocialSharingSetting', socialSharingSetting)
 
+		let navigationBarSetting = await require('~/content/settings/navigation-bar.json')
+
 		/**
 		 * Set navigation link
 		 * Each navigation link contains attributes:
@@ -99,6 +101,8 @@ export const actions = {
 		 * - icon: path to icon image. Full url will be tried to resolve with .svg, .png, .jpg, ... (refer to plugins/mixins.js)
 		 */
 		let navigations = []
+		let categoryNavigations = []
+		let pageNavigations = []
 		/**
 		 * Get category list
 		 */
@@ -111,18 +115,45 @@ export const actions = {
 			let slug = key.slice(2, -5)
 			let category = categoryIndexes(key)
 			category.slug = slug
-
-			// Add to navigation list
-			navigations.push({
-				title: category.title,
-				path: '/' + slug,
-				slug: slug,
-				description: category.description,
-				icon: category.icon
-			})
+			category.path = '/' + slug
 
 			return category
 		})
+
+		if (
+			Array.isArray(navigationBarSetting.categories.list) &&
+			navigationBarSetting.categories.list.length
+		) {
+			navigationBarSetting.categories.list.forEach(function(entry) {
+				let filteredItems = categories.filter(
+					category => category.slug == entry
+				)
+				if (filteredItems[0]) {
+					categoryNavigations.push(filteredItems[0])
+				}
+			})
+
+			if (!navigationBarSetting.categories['display-selected-only']) {
+				let nonSelectedCategories = categories.filter(
+					category =>
+						!navigationBarSetting.categories.list.includes(
+							category.slug
+						)
+				)
+
+				nonSelectedCategories.sort((a, b) =>
+					a.title.localeCompare(b.title)
+				)
+
+				categoryNavigations = categoryNavigations.concat(
+					nonSelectedCategories
+				)
+			}
+		} else {
+			categoryNavigations = categories.sort((a, b) =>
+				a.title.localeCompare(b.title)
+			)
+		}
 
 		/**
 		 * Get single page list
@@ -137,20 +168,45 @@ export const actions = {
 			if (slug != 'index') {
 				let page = pageIndexes(key)
 				page.slug = slug
-
-				// Add to navigation list
-				navigations.push({
-					title: page.title,
-					path: '/' + slug,
-					slug: slug,
-					description: page.description,
-					icon: page.icon
-				})
+				page.path = '/' + slug
+				delete page.body
 
 				return page
 			}
 		})
+		pages = pages.filter(page => page !== undefined)
 
+		if (
+			Array.isArray(navigationBarSetting.pages.list) &&
+			navigationBarSetting.pages.list.length
+		) {
+			navigationBarSetting.pages.list.forEach(function(entry) {
+				let filteredItems = pages.filter(page => page.slug == entry)
+				if (filteredItems[0]) {
+					pageNavigations.push(filteredItems[0])
+				}
+			})
+			if (!navigationBarSetting.pages['display-selected-only']) {
+				let nonSelectedPages = pages.filter(
+					page => !navigationBarSetting.pages.list.includes(page.slug)
+				)
+				nonSelectedPages.sort((a, b) => a.title.localeCompare(b.title))
+				pageNavigations = pageNavigations.concat(nonSelectedPages)
+			}
+		} else {
+			pageNavigations = pages.sort((a, b) =>
+				a.title.localeCompare(b.title)
+			)
+		}
+
+		/**
+		 * Merge navigation lists
+		 */
+		if (navigationBarSetting['display-page-list-first'] === true) {
+			navigations = pageNavigations.concat(categoryNavigations)
+		} else {
+			navigations = categoryNavigations.concat(pageNavigations)
+		}
 		await commit('setNavigations', navigations)
 
 		/**

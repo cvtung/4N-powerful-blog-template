@@ -450,3 +450,66 @@ collections:
                       widget: 'boolean',
                       default: true,
                   }
+          - label: 'Navigation bar'
+            name: 'navigation-bar'
+            file: '/content/settings/navigation-bar.json'
+            fields:
+                - {
+                      label: 'Display page list first',
+                      name: 'display-page-list-first',
+                      widget: 'boolean',
+                      default: false,
+                      required: false,
+                      hint: 'Lists are displayed from left to right. Default order is category list then page list',
+                  }
+                - label: 'Categories'
+                  name: 'categories'
+                  widget: 'object'
+                  collapsed: false
+                  fields:
+                      - {
+                            label: 'List',
+                            name: 'list',
+                            widget: 'relation',
+                            collection: 'categories',
+                            searchFields: ['title'],
+                            valueField: '{{slug}}',
+                            display_fields: ['title'],
+                            multiple: true,
+                            required: false,
+                            hint: 'Select items by your order. If this list is empty, everything will be displayed in alphabet order despite of other settings.',
+                        }
+                      - {
+                            label: 'Display selected only',
+                            name: 'display-selected-only',
+                            widget: 'boolean',
+                            default: false,
+                            required: false,
+                            hint: 'Only display your selected list. If OFF, the rest will be appended to your list in alphabet order.',
+                        }
+                - label: 'Pages'
+                  name: 'pages'
+                  widget: 'object'
+                  collapsed: false
+                  hint: 'Ignore Index page, it will not be displayed in the navigation bar no matter what.'
+                  fields:
+                      - {
+                            label: 'List',
+                            name: 'list',
+                            widget: 'relation',
+                            collection: 'pages',
+                            searchFields: ['title'],
+                            valueField: '{{slug}}',
+                            display_fields: ['title'],
+                            multiple: true,
+                            required: false,
+                            hint: 'Select items by your order. If this list is empty, everything will be displayed in alphabet order despite of other settings.',
+                        }
+                      - {
+                            label: 'Display selected only',
+                            name: 'display-selected-only',
+                            widget: 'boolean',
+                            default: false,
+                            required: false,
+                            hint: 'Only display your selected items. If OFF, the rest will be appended to your list in alphabet order.',
+                        }
