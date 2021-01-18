@@ -34,7 +34,7 @@ export default {
 		return {
 			showFull: true,
 			windowWidth: 0,
-			topBarItemListClassName: 'TopBarItemList',
+			topBarItemListClassName: 'TopBarItemListHidden',
 		}
 	},
 
