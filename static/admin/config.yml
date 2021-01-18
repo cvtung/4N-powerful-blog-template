@@ -86,7 +86,8 @@ collections:
                 widget: 'relation',
                 collection: 'categories',
                 searchFields: ['title'],
-                valueField: 'title',
+                valueField: '{{slug}}',
+                display_fields: ['title'],
                 multiple: true,
             }
           - {

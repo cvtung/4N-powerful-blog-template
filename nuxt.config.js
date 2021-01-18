@@ -61,7 +61,7 @@ export default {
 			let routes = []
 			categories.forEach(function(category) {
 				let categoryPosts = posts.filter(post =>
-					post.category.includes(category.title)
+					post.category.includes(category.slug)
 				)
 				if (Array.isArray(categoryPosts)) {
 					categoryPosts.forEach(function(post) {

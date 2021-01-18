@@ -232,7 +232,7 @@ export const actions = {
 		let categoryPosts = {}
 		categories.forEach(function(category) {
 			categoryPosts[category.slug] = posts.filter(post =>
-				post.category.includes(category.title)
+				post.category.includes(category.slug)
 			)
 
 			categoryPosts[category.slug].sort((a, b) =>
