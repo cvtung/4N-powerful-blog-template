@@ -1,0 +1,17 @@
+{
+  "categories": {
+    "list": [
+      "Tutorials",
+      "Blog",
+      "Gallery",
+      "My store"
+    ]
+  },
+  "pages": {
+    "list": [
+      "Getting started",
+      "About this project",
+      "About me"
+    ]
+  }
+}
