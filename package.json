@@ -25,7 +25,6 @@
 		"markdown-it-vue-minify": "^1.0.0",
 		"nuxt": "^2.14.12",
 		"nuxt-compress": "^4.1.0",
-		"nuxt-purgecss": "^1.0.0",
 		"vue-social-sharing": "^3.0.4"
 	},
 	"devDependencies": {}
