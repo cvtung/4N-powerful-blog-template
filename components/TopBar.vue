@@ -116,6 +116,8 @@ export default {
 }
 
 .TopBarColorMode {
+	position: sticky;
+	right: 0;
 	margin-right: 8px;
 	display: inline-flex;
 	align-items: center;
