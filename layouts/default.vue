@@ -5,6 +5,30 @@
 </template>
 
 <style>
+:root {
+	--color: #37352f;
+	--color-secondary: rgba(55, 53, 47, 0.6);
+	--bg: #ffffff;
+	--bg-secondary: rgba(100, 200, 255, 0.3);
+	--bg-hover: rgba(55, 53, 47, 0.08);
+}
+
+.dark-mode {
+	--color: #ebf4f1;
+	--color-secondary: rgba(235, 244, 241, 0.6);
+	--bg: #091a28;
+	--bg-secondary: rgba(0, 0, 0, 0.76);
+	--bg-hover: rgba(235, 244, 241, 0.08);
+}
+
+.sepia-mode {
+	--color: #433422;
+	--color-secondary: rgba(67, 52, 34, 0.6);
+	--bg: #f1e7d0;
+	--bg-secondary: rgba(255, 179, 0, 0.4);
+	--bg-hover: rgba(67, 52, 34, 0.08);
+}
+
 html {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
 		'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji',
@@ -43,7 +67,7 @@ body {
 }
 
 .container {
-	color: #37352f;
+	color: var(--color);
 	fill: currentcolor;
 	line-height: 1.5;
 	width: 100vw;
@@ -54,7 +78,7 @@ body {
 	flex-shrink: 1;
 	display: flex;
 	flex-direction: column;
-	background: #fff none repeat scroll 0 0;
+	background: var(--bg);
 	z-index: 1;
 	height: 100vh;
 	max-height: 100%;

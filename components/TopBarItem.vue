@@ -58,7 +58,7 @@ export default {
 	min-width: 0px;
 	padding-left: 6px;
 	padding-right: 6px;
-	color: rgb(55, 53, 47);
+	color: var(--color);
 	font-weight: normal;
 	text-decoration: none;
 }
@@ -75,15 +75,14 @@ export default {
 	width: 100%;
 	border-radius: 3px;
 	font-size: 14px;
-	line-height: 1.2;
 	min-width: 0px;
 	padding-left: 8px;
 	padding-right: 8px;
-	color: rgb(55, 53, 47);
+	color: var(--color);
 }
 
 .TopBarItemContainer:hover {
-	background: rgb(55, 53, 47, 0.08) none repeat scroll 0% 0%;
+	background: var(--bg-hover);
 }
 
 .TopBarItemIcon {

@@ -125,7 +125,8 @@ export default {
 	margin-top: 8px;
 	margin-bottom: 4px;
 	margin-left: -1px;
-	color: rgba(55, 53, 47, 0.4);
+	color: var(--color);
+	opacity: 0.4;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
 		'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji',
 		'Segoe UI Symbol';
@@ -133,7 +134,7 @@ export default {
 }
 
 .Title {
-	color: rgb(55, 53, 47);
+	color: var(--color);
 	font-weight: 700;
 	line-height: 1.2;
 	font-size: 40px;
@@ -156,8 +157,6 @@ export default {
 }
 
 .InfoContainer {
-	/* padding-left: calc(96px + env(safe-area-inset-left));
-	padding-right: calc(96px + env(safe-area-inset-right)); */
 	max-width: 100%;
 	width: 900px;
 	margin: 0px auto;
@@ -178,7 +177,7 @@ export default {
 }
 
 .AuthorAvatarContainer {
-	background: white none repeat scroll 0% 0%;
+	background: var(--bg);
 	border-radius: 100%;
 	box-shadow: rgba(15, 15, 15, 0.1) 0px 2px 4px;
 	width: 30px;
@@ -207,11 +206,14 @@ export default {
 }
 
 .Date {
-	font-size: 12px;
-	line-height: 16px;
-	color: rgba(55, 53, 47, 0.4);
+	line-height: 18px;
 	margin: 0px 6px;
-	white-space: nowrap;
+	border-radius: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+	font-size: 12px;
+	color: var(--color-secondary);
+	background: var(--bg-secondary);
 }
 
 .Description {
@@ -219,6 +221,5 @@ export default {
 	width: 100%;
 	white-space: pre-wrap;
 	word-break: break-word;
-	caret-color: rgb(55, 53, 47);
 }
 </style>

@@ -58,7 +58,7 @@ export default {
 	display: flex;
 }
 .Post:hover {
-	background: rgb(55, 53, 47, 0.08) none repeat scroll 0% 0%;
+	background: var(--bg-hover);
 }
 
 .PostContainer {
@@ -67,7 +67,7 @@ export default {
 	width: 100%;
 	display: flex;
 	overflow: hidden;
-	border: 1px solid rgba(55, 53, 47, 0.16);
+	border: 2px solid var(--bg-hover);
 	border-radius: 3px;
 	color: inherit;
 }
@@ -99,13 +99,13 @@ export default {
 	padding-left: 6px;
 	padding-right: 6px;
 	font-size: 12px;
-	color: rgba(55, 53, 47, 0.6);
-	background: rgba(233, 168, 0, 0.2);
+	color: var(--color-secondary);
+	background: var(--bg-secondary);
 }
 
 .PostDescription {
 	font-size: 12px;
-	color: rgba(55, 53, 47, 0.6);
+	color: var(--color-secondary);
 	margin-top: 5px;
 }
 

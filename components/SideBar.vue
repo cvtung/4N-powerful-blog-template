@@ -93,9 +93,9 @@ export default {
 	flex-direction: column;
 	max-width: 75vw;
 	height: 100%;
-	background: white;
+	background: var(--bg);
 	will-change: transform;
-	color: rgba(55, 53, 47, 0.6);
+	color: var(--color);
 	margin-left: auto;
 	cursor: pointer;
 }
@@ -124,7 +124,7 @@ export default {
 }
 
 .SideBarHeader {
-	background: whitesmoke;
+	background: var(--bg);
 	display: flex;
 	align-items: center;
 	height: 45px;

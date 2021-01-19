@@ -93,13 +93,7 @@ export default {
 	/*
 	 ** Nuxt.js dev-modules
 	 */
-	buildModules: ['nuxt-compress'],
-	/*
-	 ** Nuxt.js modules
-	 */
-	modules: [
-		'vue-social-sharing/nuxt',
-		'@nuxt/image',
+	buildModules: [
 		[
 			'nuxt-compress',
 			{
@@ -110,8 +104,13 @@ export default {
 					threshold: 10240
 				}
 			}
-		]
+		],
+		'@nuxtjs/color-mode'
 	],
+	/*
+	 ** Nuxt.js modules
+	 */
+	modules: ['vue-social-sharing/nuxt', '@nuxt/image', '@nuxtjs/svg'],
 	/*
 	 ** Build configuration
 	 */
@@ -125,5 +124,19 @@ export default {
 	/**
 	 ** Scan and auto import components in <script>
 	 */
-	components: true
+	components: true,
+
+	/**
+	 * https://color-mode.nuxtjs.org/#configuration
+	 */
+	colorMode: {
+		preference: 'system', // default value of $colorMode.preference
+		fallback: 'light', // fallback value if not system preference found
+		hid: 'nuxt-color-mode-script',
+		globalName: '__NUXT_COLOR_MODE__',
+		componentName: 'ColorScheme',
+		classPrefix: '',
+		classSuffix: '-mode',
+		storageKey: 'nuxt-color-mode'
+	}
 }

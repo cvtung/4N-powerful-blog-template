@@ -12,7 +12,7 @@
 				/>
 			</div>
 
-			<div class="TopBarDelimiter" v-show="this.showFull"></div>
+			<div class="TopBarSpacer" v-show="this.showFull"></div>
 
 			<div :class="this.topBarItemListClassName" ref="TopBarItemList">
 				<top-bar-item
@@ -23,6 +23,12 @@
 					:icon="navigation.icon"
 					:description="navigation.description"
 				/>
+			</div>
+
+			<div class="TopBarDelimiter" v-show="this.showFull"></div>
+
+			<div class="TopBarColorMode">
+				<color-mode />
 			</div>
 		</div>
 	</div>
@@ -57,7 +63,7 @@ export default {
 
 			if (
 				topBarItemListWidth > 0 &&
-				topBarItemListWidth > this.windowWidth - blogNameWidth - 50
+				topBarItemListWidth > this.windowWidth - blogNameWidth - 100
 			) {
 				this.showFull = false
 			} else {
@@ -85,7 +91,7 @@ export default {
 	width: 100%;
 	max-width: 100vw;
 	height: 45px;
-	background: whitesmoke;
+	background: var(--bg);
 	position: relative;
 }
 
@@ -95,9 +101,24 @@ export default {
 	height: 45px;
 }
 
-.TopBarDelimiter {
+.TopBarSpacer {
 	flex-grow: 1;
 	flex-shrink: 1;
+}
+
+.TopBarDelimiter {
+	flex: 0 0 auto;
+	width: 1px;
+	margin: 0px 8px;
+	height: 30px;
+	background: var(--color);
+	opacity: 0.16;
+}
+
+.TopBarColorMode {
+	margin-right: 8px;
+	display: inline-flex;
+	align-items: center;
 }
 
 .TopBarItemList {

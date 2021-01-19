@@ -50,4 +50,29 @@ export default {
 .el-image-viewer__wrapper {
 	cursor: default;
 }
+
+.markdown-body {
+	color: var(--color);
+}
+
+.markdown-body img {
+	background-color: unset;
+}
+
+.dark-mode .markdown-body table {
+	color: #37352f;
+}
+
+.markdown-body hr {
+	background-color: var(--bg-hover);
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+	border-bottom: 2px solid var(--bg-hover);
+}
+
+.markdown-body blockquote {
+	border-left: 0.25em solid #6a737d;
+}
 </style>
