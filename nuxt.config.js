@@ -105,7 +105,8 @@ export default {
 				}
 			}
 		],
-		'@nuxtjs/color-mode'
+		'@nuxtjs/color-mode',
+		'nuxt-purgecss'
 	],
 	/*
 	 ** Nuxt.js modules
