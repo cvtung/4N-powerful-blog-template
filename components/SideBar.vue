@@ -143,5 +143,6 @@ export default {
 	margin-top: 10px;
 	width: max-content;
 	max-width: 75vw;
+	width: 100%;
 }
 </style>
