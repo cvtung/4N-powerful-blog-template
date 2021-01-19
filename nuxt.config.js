@@ -163,6 +163,7 @@ export default {
 	 * https://sitemap.nuxtjs.org/usage/sitemap-options
 	 */
 	sitemap: {
+		hostname: process.env.BASE_URL,
 		gzip: true,
 		exclude: ['/admin/**']
 	}
