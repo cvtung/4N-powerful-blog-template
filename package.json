@@ -20,6 +20,7 @@
 		"@nuxt/components": "^1.2.2",
 		"@nuxt/image": "0.0.4",
 		"@nuxtjs/color-mode": "^2.0.2",
+		"@nuxtjs/robots": "^2.4.2",
 		"@nuxtjs/svg": "^0.1.12",
 		"markdown-it-vue-minify": "^1.0.0",
 		"nuxt": "^2.14.12",

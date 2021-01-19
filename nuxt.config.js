@@ -110,7 +110,18 @@ export default {
 	/*
 	 ** Nuxt.js modules
 	 */
-	modules: ['vue-social-sharing/nuxt', '@nuxt/image', '@nuxtjs/svg'],
+	modules: [
+		'vue-social-sharing/nuxt',
+		'@nuxt/image',
+		'@nuxtjs/svg',
+		[
+			'@nuxtjs/robots',
+			{
+				UserAgent: '*',
+				Disallow: '/admin'
+			}
+		]
+	],
 	/*
 	 ** Build configuration
 	 */
