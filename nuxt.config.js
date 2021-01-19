@@ -33,7 +33,17 @@ export default {
 
 	generate: {
 		routes: function() {
+			let routes = []
 			const fs = require('fs')
+
+			let pages = fs.readdirSync('./content/pages').map(file => {
+				let slug = file.slice(0, -5)
+				if (slug !== 'index') {
+					routes.push({
+						route: '/' + slug
+					})
+				}
+			})
 
 			let categories = fs
 				.readdirSync('./content/categories')
@@ -45,6 +55,11 @@ export default {
 					)
 					let category = JSON.parse(content)
 					category.slug = slug
+
+					routes.push({
+						route: '/' + slug
+					})
+
 					return category
 				})
 
@@ -58,7 +73,6 @@ export default {
 				return post
 			})
 
-			let routes = []
 			categories.forEach(function(category) {
 				let categoryPosts = posts.filter(post =>
 					post.category.includes(category.slug)
@@ -110,7 +124,12 @@ export default {
 	/*
 	 ** Nuxt.js modules
 	 */
-	modules: ['vue-social-sharing/nuxt', '@nuxt/image', '@nuxtjs/svg'],
+	modules: [
+		'vue-social-sharing/nuxt',
+		'@nuxt/image',
+		'@nuxtjs/svg',
+		'@nuxtjs/sitemap'
+	],
 	/*
 	 ** Build configuration
 	 */
@@ -138,5 +157,13 @@ export default {
 		classPrefix: '',
 		classSuffix: '-mode',
 		storageKey: 'nuxt-color-mode'
+	},
+
+	/**
+	 * https://sitemap.nuxtjs.org/usage/sitemap-options
+	 */
+	sitemap: {
+		gzip: true,
+		exclude: ['/admin/**']
 	}
 }
