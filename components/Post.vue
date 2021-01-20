@@ -145,4 +145,8 @@ export default {
 	color: var(--color-secondary);
 	margin: 3px;
 }
+
+.Post img {
+	opacity: 1 !important;
+}
 </style>
