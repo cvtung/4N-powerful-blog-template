@@ -4,6 +4,11 @@
   "author_avatar": "",
   "date": "January 2, 2021 11:24 AM",
   "title": "Demo with markdown",
+  "tags": [
+    "blogging",
+    "markdown",
+    ""
+  ],
   "icon": "/img/1f4d1.png",
   "description": "A long post with all markdown syntaxes",
   "category": [
