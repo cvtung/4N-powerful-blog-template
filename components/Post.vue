@@ -21,7 +21,7 @@
 						class="PostTag"
 						v-for="(tag, index) in postTags"
 						:key="index"
-						:to="tag"
+						:to="`/${tag}`"
 						:title="tag"
 					>
 						#{{ tag }}
