@@ -33,6 +33,7 @@
 				<nuxt-image
 					class="PostJumbotronImage"
 					:src="jumbotronImagePath"
+					:placeholder="true"
 				/>
 			</div>
 		</nuxt-link>
