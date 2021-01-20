@@ -61,7 +61,7 @@ export default {
 
 				if (post.tags) {
 					post.tags.forEach(function(tag) {
-						if (tags.indexOf(tag) !== -1 && tag) {
+						if (tags.indexOf(tag) == -1 && tag) {
 							tags.push(tag)
 						}
 					})
