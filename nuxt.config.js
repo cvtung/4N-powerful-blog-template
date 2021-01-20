@@ -33,6 +33,8 @@ export default {
 
 	generate: {
 		routes: function() {
+			let routes = []
+
 			const fs = require('fs')
 
 			let categories = fs
@@ -48,6 +50,7 @@ export default {
 					return category
 				})
 
+			let tags = []
 			let posts = fs.readdirSync('./content/posts').map(file => {
 				let slug = file.slice(0, -5)
 				let content = fs.readFileSync('./content/posts/' + file, 'utf8')
@@ -55,10 +58,24 @@ export default {
 				delete post.body
 				post.slug = slug
 				post.fileName = file
+
+				if (post.tags) {
+					post.tags.forEach(function(tag) {
+						if (tags.indexOf(tag) !== -1 && tag) {
+							tags.push(tag)
+						}
+					})
+				}
+
 				return post
 			})
 
-			let routes = []
+			tags.forEach(function(tag) {
+				routes.push({
+					route: '/' + tag
+				})
+			})
+
 			categories.forEach(function(category) {
 				let categoryPosts = posts.filter(post =>
 					post.category.includes(category.slug)
