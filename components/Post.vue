@@ -148,5 +148,6 @@ export default {
 
 .Post img {
 	opacity: 1 !important;
+	transition: opacity 500ms ease 0ms !important;
 }
 </style>
