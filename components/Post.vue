@@ -7,6 +7,7 @@
 						<nuxt-image
 							class="PostIconImage"
 							:src="iconImagePath"
+							alt=" "
 						/>
 					</div>
 					{{ title }}
@@ -34,6 +35,7 @@
 					class="PostJumbotronImage"
 					:src="jumbotronImagePath"
 					:placeholder="true"
+					alt=" "
 				/>
 			</div>
 		</nuxt-link>
@@ -148,6 +150,6 @@ export default {
 
 .Post img {
 	opacity: 1 !important;
-	transition: opacity 500ms ease 0ms !important;
+	transition: opacity 800ms ease 0ms !important;
 }
 </style>
