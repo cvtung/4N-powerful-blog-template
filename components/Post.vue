@@ -16,6 +16,17 @@
 				<div class="PostDescription">
 					{{ description }}
 				</div>
+				<div class="PostTags">
+					<nuxt-link
+						class="PostTag"
+						v-for="(tag, index) in postTags"
+						:key="index"
+						:to="tag"
+						:title="tag"
+					>
+						#{{ tag }}
+					</nuxt-link>
+				</div>
 			</div>
 
 			<div class="PostJumbotron">
@@ -34,6 +45,7 @@ export default {
 		path: String,
 		title: String,
 		description: String,
+		tags: Array,
 		icon: String,
 		jumbotron: String,
 		date: String,
@@ -45,6 +57,12 @@ export default {
 		},
 		jumbotronImagePath: function () {
 			return this.resolveImagePath(this.jumbotron)
+		},
+		postTags: function () {
+			if (this.tags) {
+				return this.tags.filter((tag) => tag != '')
+			}
+			return []
 		},
 	},
 }
@@ -119,5 +137,11 @@ export default {
 	border-radius: 1px;
 	width: 100%;
 	height: 100%;
+}
+
+.PostTag {
+	font-size: 12px;
+	color: var(--color-secondary);
+	margin: 3px;
 }
 </style>

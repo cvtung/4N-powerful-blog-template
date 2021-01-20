@@ -34,6 +34,17 @@
 							<div class="Date">{{ date }}</div>
 						</div>
 						<div class="Description">{{ description }}</div>
+						<div class="Tags">
+							<nuxt-link
+								class="Tag"
+								v-for="(tag, index) in postTags"
+								:key="index"
+								:to="tag"
+								:title="tag"
+							>
+								#{{ tag }}
+							</nuxt-link>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -52,6 +63,7 @@ export default {
 		title: String,
 		date: String,
 		description: String,
+		tags: Array,
 	},
 
 	computed: {
@@ -61,6 +73,13 @@ export default {
 
 		authorAvatarImagePath: function () {
 			return this.resolveImagePath(this.authorAvatar)
+		},
+
+		postTags: function () {
+			if (this.tags) {
+				return this.tags.filter((tag) => tag != '')
+			}
+			return []
 		},
 	},
 }
@@ -221,5 +240,11 @@ export default {
 	width: 100%;
 	white-space: pre-wrap;
 	word-break: break-word;
+}
+
+.Tag {
+	font-size: 12px;
+	color: var(--color);
+	margin: 3px;
 }
 </style>

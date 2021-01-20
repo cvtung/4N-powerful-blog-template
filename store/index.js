@@ -6,6 +6,7 @@ Vue.use(Vuex)
 export const state = () => ({
 	navigations: null,
 	posts: null,
+	taggedPosts: null,
 
 	WEBSITE_NAME: 'Your website name',
 	JUMBOTRON: '/img/jumbotron.jpg',
@@ -71,6 +72,10 @@ export const mutations = {
 
 	setCategoryPosts(state, list) {
 		state.posts = list
+	},
+
+	setTaggedPosts(state, list) {
+		state.taggedPosts = list
 	},
 
 	setShowSideBar(state, value) {
@@ -228,6 +233,7 @@ export const actions = {
 
 			return post
 		})
+		posts = posts.filter(post => post !== undefined)
 
 		let categoryPosts = {}
 		categories.forEach(function(category) {
@@ -241,6 +247,28 @@ export const actions = {
 		})
 
 		await commit('setCategoryPosts', categoryPosts)
+
+		let taggedPosts = {}
+		posts.forEach(function(post) {
+			if (post.tags !== undefined) {
+				post.tags.forEach(function(tag) {
+					if (tag) {
+						if (taggedPosts[tag] === undefined) {
+							taggedPosts[tag] = []
+						}
+						taggedPosts[tag].push(post)
+					}
+				})
+			}
+		})
+
+		for (let tag in taggedPosts) {
+			taggedPosts[tag].sort((a, b) =>
+				a.date < b.date ? 1 : b.date < a.date ? -1 : 0
+			)
+		}
+
+		await commit('setTaggedPosts', taggedPosts)
 	},
 
 	async toggleSideBar({ commit }) {

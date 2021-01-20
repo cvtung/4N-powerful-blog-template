@@ -10,6 +10,7 @@
 			:icon="this.icon"
 			:date="this.date"
 			:description="this.description"
+			:tags="this.tags"
 		>
 			<!-- Display post content -->
 			<markdown-content :content="this.body" />
@@ -33,6 +34,7 @@ export default {
 			icon: '',
 			date: '',
 			description: '',
+			tags: [],
 			body: '',
 			post: '',
 		}
@@ -53,6 +55,7 @@ export default {
 			this.icon = post.icon
 			this.date = post.date
 			this.description = post.description
+			this.tags = post.tags
 			this.body = post.body
 		} catch (e) {
 			this.body = 'Something wrong: ' + e.message

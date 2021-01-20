@@ -8,6 +8,7 @@
 			:icon="iconImage"
 			:date="date"
 			:description="description"
+			:tags="tags"
 		/>
 
 		<spacer />
@@ -30,6 +31,7 @@ export default {
 		icon: String,
 		date: String,
 		description: String,
+		tags: Array,
 	},
 
 	computed: {

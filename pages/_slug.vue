@@ -67,42 +67,83 @@ export default {
 			this.body = page.body
 			this.postList = []
 		} catch (e) {
-			let category = require(`~/content/categories/${this.slug}.json`)
-			console.log('category', category)
+			try {
+				let category = require(`~/content/categories/${this.slug}.json`)
+				console.log('category', category)
 
-			this.jumbotron = category.jumbotron
-			this.authorAvatar = ''
-			this.authorName = ''
-			this.title = category.title
-			this.icon = category.icon
-			this.date = ''
-			this.description = category.description
-			this.body = ''
+				this.jumbotron = category.jumbotron
+				this.authorAvatar = ''
+				this.authorName = ''
+				this.title = category.title
+				this.icon = category.icon
+				this.date = ''
+				this.description = category.description
+				this.tags = []
+				this.body = ''
 
-			let posts = this.$store.state.posts[this.slug]
+				let posts = this.$store.state.posts[this.slug]
 
-			posts.forEach((post) => {
-				let categorySlug = this.slug
-				/**
-				 * @see https://forum.vuejs.org/t/how-to-add-or-remove-vue-js-component-dynamically-programmatically-or-on-the-fly/32356/3
-				 * @tutorial https://jsfiddle.net/jamesbrndwgn/ku7m1dp0/9/
-				 */
-				const postComponent = {
-					render(component) {
-						return component(Post, {
-							props: {
-								path: '/' + categorySlug + '/' + post.slug,
-								title: post.title,
-								description: post.description,
-								icon: post.icon,
-								jumbotron: post.jumbotron,
-								date: post.date,
-							},
-						})
-					},
-				}
-				this.postList.push(postComponent)
-			}, this)
+				posts.forEach((post) => {
+					let categorySlug = this.slug
+					/**
+					 * @see https://forum.vuejs.org/t/how-to-add-or-remove-vue-js-component-dynamically-programmatically-or-on-the-fly/32356/3
+					 * @tutorial https://jsfiddle.net/jamesbrndwgn/ku7m1dp0/9/
+					 */
+					const postComponent = {
+						render(component) {
+							return component(Post, {
+								props: {
+									path: '/' + categorySlug + '/' + post.slug,
+									title: post.title,
+									description: post.description,
+									tags: post.tags,
+									icon: post.icon,
+									jumbotron: post.jumbotron,
+									date: post.date,
+								},
+							})
+						},
+					}
+					this.postList.push(postComponent)
+				}, this)
+			} catch (e) {
+				console.log('tag', this.slug)
+
+				this.jumbotron = ''
+				this.authorAvatar = ''
+				this.authorName = ''
+				this.title = '#' + this.slug
+				this.icon = ''
+				this.date = ''
+				this.description = ''
+				this.body = ''
+
+				let posts = this.$store.state.taggedPosts[this.slug]
+
+				posts.forEach((post) => {
+					let categorySlug = post.category[0]
+					/**
+					 * @see https://forum.vuejs.org/t/how-to-add-or-remove-vue-js-component-dynamically-programmatically-or-on-the-fly/32356/3
+					 * @tutorial https://jsfiddle.net/jamesbrndwgn/ku7m1dp0/9/
+					 */
+					const postComponent = {
+						render(component) {
+							return component(Post, {
+								props: {
+									path: '/' + categorySlug + '/' + post.slug,
+									title: post.title,
+									description: post.description,
+									tags: post.tags,
+									icon: post.icon,
+									jumbotron: post.jumbotron,
+									date: post.date,
+								},
+							})
+						},
+					}
+					this.postList.push(postComponent)
+				}, this)
+			}
 		}
 	},
 
