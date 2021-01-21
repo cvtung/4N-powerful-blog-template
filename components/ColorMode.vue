@@ -1,6 +1,8 @@
 <template>
 	<div class="ColorMode" v-on:click="toggleColorMode">
-		<component :is="`color-mode-${this.currentColor}`" />
+		<client-only>
+			<component :is="`color-mode-${this.currentColor}`" />
+		</client-only>
 	</div>
 </template>
 
@@ -26,7 +28,12 @@ export default {
 	},
 
 	beforeMount() {
-		this.currentColor = localStorage.getItem('nuxt-color-mode')
+		let color = localStorage.getItem('nuxt-color-mode')
+		if (color) {
+			this.currentColor = color
+		} else {
+			this.currentColor = 'system'
+		}
 		this.$colorMode.preference = this.currentColor
 	},
 
