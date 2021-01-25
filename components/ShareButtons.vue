@@ -49,7 +49,8 @@ export default {
 				hashtags: '',
 				twitterUser: '',
 			},
-			networks: [
+			networks: [],
+			availableNetworks: [
 				{
 					slug: 'baidu',
 					name: 'Baidu',
@@ -287,18 +288,14 @@ export default {
 		this.sharing.hashtags = window.location.host
 		this.sharing.twitterUser = socialSharingSetting.twitter_username
 
-		let networks = this.networks
-		networks.forEach(function (network, index) {
+		this.availableNetworks.forEach(function (network, index) {
 			if (
 				socialSharingSetting.hasOwnProperty(network.slug) &&
-				socialSharingSetting[network.slug] == false
+				socialSharingSetting[network.slug] == true
 			) {
-				console.log(index)
-				networks.splice(index, 1)
+				this.networks.push(network)
 			}
-		})
-
-		this.networks = networks
+		}, this)
 	},
 }
 </script>
