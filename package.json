@@ -17,7 +17,7 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"@nuxt/components": "^1.2.6",
+		"@nuxt/components": "^2.0.0",
 		"@nuxt/image": "0.3.0",
 		"@nuxtjs/color-mode": "^2.0.3",
 		"@nuxtjs/robots": "^2.4.2",
