@@ -1,6 +1,6 @@
 <template>
 	<div class="Jumbotron">
-		<nuxt-image
+		<nuxt-img
 			class="JumbotronImage"
 			:src="imagePath"
 			:placeholder="true"

@@ -2,7 +2,7 @@
 	<div class="Heading" id="heading">
 		<div class="Icon">
 			<div class="IconContainer">
-				<nuxt-image
+				<nuxt-img
 					:lazy="false"
 					class="IconImage"
 					:src="iconImagePath"
@@ -19,7 +19,7 @@
 				<div class="InfoRow">
 					<div class="AuthorAvatar">
 						<div class="AuthorAvatarContainer">
-							<nuxt-image
+							<nuxt-img
 								class="AuthorAvatarImage"
 								:src="authorAvatarImagePath"
 								:placeholder="true"

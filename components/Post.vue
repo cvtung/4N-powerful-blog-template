@@ -4,7 +4,7 @@
 			<div class="PostInfoContainer">
 				<div class="PostTitleContainer">
 					<div class="PostIcon">
-						<nuxt-image
+						<nuxt-img
 							class="PostIconImage"
 							:src="iconImagePath"
 							alt=" "
@@ -31,7 +31,7 @@
 			</div>
 
 			<div class="PostJumbotron">
-				<nuxt-image
+				<nuxt-img
 					class="PostJumbotronImage"
 					:src="jumbotronImagePath"
 					:placeholder="true"

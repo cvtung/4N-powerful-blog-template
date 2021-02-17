@@ -7,7 +7,7 @@
 	>
 		<div class="TopBarItemContainer">
 			<div class="TopBarItemIcon">
-				<nuxt-image
+				<nuxt-img
 					:lazy="false"
 					class="TopBarItemImage"
 					:src="iconImagePath"
