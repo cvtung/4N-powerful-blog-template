@@ -111,6 +111,7 @@ export default {
 	 ** Nuxt.js dev-modules
 	 */
 	buildModules: [
+		'@nuxt/image',
 		[
 			'nuxt-compress',
 			{
@@ -129,7 +130,6 @@ export default {
 	 */
 	modules: [
 		'vue-social-sharing/nuxt',
-		'@nuxt/image',
 		'@nuxtjs/svg',
 		[
 			'@nuxtjs/robots',
