@@ -23,7 +23,7 @@
 		"@nuxtjs/robots": "^2.5.0",
 		"@nuxtjs/svg": "^0.1.12",
 		"markdown-it-vue-minify": "^1.0.0",
-		"nuxt": "^2.15.3",
+		"nuxt": "^2.15.4",
 		"nuxt-compress": "^4.1.1",
 		"vue-social-sharing": "^3.0.7"
 	},
