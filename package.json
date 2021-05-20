@@ -19,7 +19,7 @@
 	"dependencies": {
 		"@nuxt/components": "2.1.8",
 		"@nuxt/image": "0.4.10",
-		"@nuxtjs/color-mode": "2.0.5",
+		"@nuxtjs/color-mode": "2.0.8",
 		"@nuxtjs/robots": "2.5.0",
 		"@nuxtjs/svg": "0.1.12",
 		"markdown-it-vue-minify": "1.0.0",
