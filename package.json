@@ -21,7 +21,7 @@
 		"@nuxt/image": "0.7.1",
 		"@nuxtjs/color-mode": "3.3.0",
 		"@nuxtjs/robots": "3.0.0",
-		"@nuxtjs/svg": "0.4.0",
+		"@nuxtjs/svg": "0.4.1",
 		"markdown-it-vue-minify": "1.0.0",
 		"nuxt": "3.7.1",
 		"nuxt-compress": "5.0.0",
